@@ -167,3 +167,52 @@ label start:
 
     lyra worried "Something destroyed the eastern mill last night. Our elder went to investigate alone. She's gone."
     lyra worried "And I found tracks leading into the Thornwood. Big tracks. I'm good, but not {i}that{/i} good alone."
+
+    menu:
+        "\"I'll help. No strings.\""  :
+            $ courage += 5
+            $ rel_lyra += 10
+            hero happy "Lead the way."
+            lyra happy "Just like that? No negotiation?"
+            hero happy "Sometimes things just need doing."
+
+        "\"What's the pay?\""  :
+            $ cunning += 5
+            hero neutral "I appreciate the urgency. What's the compensation?"
+            lyra neutral "Shelter, a hot meal, and — honestly — I think there's something weird going on that might interest someone like you."
+            hero neutral "Weird how?"
+            lyra worried "The tracks… they glow."
+            hero surprised "I'll take the meal."
+
+        "\"Tell me about this elder first.\""  :
+            $ mercy += 5
+            $ rel_maren += 5
+            hero neutral "Elder Maren — what's she like? Will she have gone somewhere safe, or straight into danger?"
+            lyra sad "Straight into danger. She's stubborn as stone and twice as hard."
+            hero neutral "Sounds like someone worth finding. Let's go."
+
+    scene bg_tavern with dissolve
+    hide lyra
+
+    lyra neutral "Before the Thornwood — I want to grab supplies from the tavern. Two minutes."
+
+    show tobias happy at center with dissolve
+
+    tobias happy "Lyra! And a stranger! Wonderful. I was just telling {i}no one{/i} about my latest invention."
+
+    lyra neutral "Tobias is our local… inventor. Use that word loosely."
+
+    tobias happy "I prefer {i}visionary engineer.{/i} But yes. Tobias Wren, at your service."
+    tobias happy "[player_name], is it? Excellent name. I've built something that could help you in those woods."
+
+    menu:
+        "\"What kind of invention?\""  :
+            $ tobias_joined = False
+            $ rel_tobias += 10
+            tobias happy "A compass — but instead of north, it points toward magical disturbances. I call it the Lodestar."
+            hero surprised "That's… actually brilliant."
+            tobias happy "I {i}know.{/i} It'll cost you nothing. Consider it field testing."
+            Tobias pressed a  small brass device into your hand. Its already twitching.
+
+        ""
+
